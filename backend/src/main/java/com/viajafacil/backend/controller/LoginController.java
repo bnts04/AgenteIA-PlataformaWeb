@@ -10,7 +10,7 @@ import java.util.Map;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/auth")
+@RequestMapping("/login")
 public class LoginController {
 
     @Autowired
@@ -36,6 +36,11 @@ public class LoginController {
         public void setContrasena(String contrasena) {
             this.contrasena = contrasena;
         }
+    }
+
+    @GetMapping
+    public String test() {
+        return "LoginController esta activo, falta conectar al Frontend ";
     }
 
     @PostMapping("/login")
