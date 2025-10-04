@@ -8,6 +8,6 @@ public class HelloController {
 
     @GetMapping("/hello")
     public String hello() {
-        return "¡Hola, el backend Spring Boot está funcionando! 🚀";
+        return "¡Hola, el backend Spring Boot ESTAMOS EN PROCESO , PERO YA TENEMOS CONEXION A LA BSE DE DATOS! ";
     }
 }
