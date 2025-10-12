@@ -11,6 +11,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/login")
+@CrossOrigin(origins = "*")
 public class LoginController {
 
     @Autowired
@@ -43,7 +44,7 @@ public class LoginController {
         return "LoginController esta activo, falta conectar al Frontend ";
     }
 
-    @PostMapping("/login")
+    @PostMapping
     public Map<String, Object> login(@RequestBody LoginRequest loginRequest) {
         Optional<Usuario> usuarioOpt = usuarioRepository.findByCorreo(loginRequest.getCorreo());
         Map<String, Object> response = new HashMap<>();
