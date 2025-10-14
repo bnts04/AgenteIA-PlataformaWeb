@@ -10,22 +10,19 @@ public class Paquete {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id_paquete;
 
-    @Column(nullable = false)
-    private String destino;
-
-    @Column(nullable = false)
     private String descripcion;
 
-    @Column(nullable = false)
-    private String categoria;
+    private String categoria; // alto, medio, bajo
 
-    @Column(nullable = false)
-    private Double precio;
+    private Double precio_base;
 
-    // Relación con Usuario (muchos paquetes pueden ser creados por un usuario)
-    @ManyToOne
-    @JoinColumn(name = "id_usuario")
-    private Usuario usuario;
+    public Paquete() {}
+
+    public Paquete(String descripcion, String categoria, Double precio_base) {
+        this.descripcion = descripcion;
+        this.categoria = categoria;
+        this.precio_base = precio_base;
+    }
 
     // Getters y Setters
     public Long getId_paquete() {
@@ -34,14 +31,6 @@ public class Paquete {
 
     public void setId_paquete(Long id_paquete) {
         this.id_paquete = id_paquete;
-    }
-
-    public String getDestino() {
-        return destino;
-    }
-
-    public void setDestino(String destino) {
-        this.destino = destino;
     }
 
     public String getDescripcion() {
@@ -60,19 +49,11 @@ public class Paquete {
         this.categoria = categoria;
     }
 
-    public Double getPrecio() {
-        return precio;
+    public Double getPrecio_base() {
+        return precio_base;
     }
 
-    public void setPrecio(Double precio) {
-        this.precio = precio;
-    }
-
-    public Usuario getUsuario() {
-        return usuario;
-    }
-
-    public void setUsuario(Usuario usuario) {
-        this.usuario = usuario;
+    public void setPrecio_base(Double precio_base) {
+        this.precio_base = precio_base;
     }
 }
