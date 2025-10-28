@@ -1,30 +1,30 @@
 package com.viajafacil.backend.model;
 
-import jakarta.persistence.*;
-import java.time.LocalDateTime;
-import com.fasterxml.jackson.annotation.JsonFormat;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import jakarta.persistence.*; // Librería JPA para mapear la clase a una tabla de base de datos
+import java.time.LocalDateTime; // Maneja fecha y hora (sin zona horaria)
+import com.fasterxml.jackson.annotation.JsonFormat; // Da formato a fechas/hora en el JSON
+import com.fasterxml.jackson.annotation.JsonIgnore; // Evita incluir un campo en la salida JSON
+import com.fasterxml.jackson.annotation.JsonProperty; // Permite renombrar un campo en el JSON
 
-@Entity
-@Table(name = "pago")
+@Entity // Indica que esta clase se convierte en una tabla en la base de datos
+@Table(name = "pago") // Definimos el nombre exacto de la tabla
 public class Pago {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id_pago;
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // Generación automática del ID
+    private Long id_pago; // Identificador único del pago
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_reserva", nullable = false)
-    @JsonIgnore
-    private Reserva reserva;
+    @ManyToOne(fetch = FetchType.LAZY)// Relación muchos a uno
+    @JoinColumn(name = "id_reserva", nullable = false) // Clave foránea que apunta a la tabla reserva
+    @JsonIgnore // Oculta el objeto "reserva" completo en el JSON
+    private Reserva reserva; // Objeto reserva asociado al pago
 
     //esto hace que lo exponga la columna , pero no lo toca , solo lo muestra en el postman
     @Column(name = "id_reserva", insertable = false, updatable = false)
-    @JsonProperty("id_reserva")
-    private Long idReservaFk;
+    @JsonProperty("id_reserva") // Hace visible este valor en el JSON con el nombre "id_reserva"
+    private Long idReservaFk; // FK solo para mostrar el ID de la reserva asociada
 
-    @Column(nullable = false)
+    @Column(nullable = false)// Campo obligatorio
     private Double monto;
 
     @Column(name = "metodo_pago", nullable = false, length = 30)

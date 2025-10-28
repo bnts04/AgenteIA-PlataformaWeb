@@ -71,13 +71,10 @@ public class PresupuestoController {
     @PutMapping("/{idPresupuesto}")
     public Map<String, Object> actualizarPresupuesto(
             @PathVariable Long idPresupuesto,
-            @RequestParam(required = false) String destino,
-            @RequestParam(required = false) String fecha_inicio,
-            @RequestParam(required = false) String fecha_fin,
-            @RequestParam(required = false) Double presupuesto_estimado
+            @RequestBody Map<String, Object> body
     ) {
         Map<String, Object> response = new HashMap<>();
-        Optional<Presupuesto> presupuestoOpt = presupuestoRepository.findById(idPresupuesto);
+        var presupuestoOpt = presupuestoRepository.findById(idPresupuesto);
 
         if (presupuestoOpt.isEmpty()) {
             response.put("status", "error");
@@ -85,19 +82,31 @@ public class PresupuestoController {
             return response;
         }
 
-        Presupuesto presupuesto = presupuestoOpt.get();
+        Presupuesto p = presupuestoOpt.get();
 
-        if (destino != null) presupuesto.setDestino(destino);
-        if (fecha_inicio != null) presupuesto.setFecha_inicio(LocalDate.parse(fecha_inicio));
-        if (fecha_fin != null) presupuesto.setFecha_fin(LocalDate.parse(fecha_fin));
-        if (presupuesto_estimado != null) presupuesto.setPresupuesto_estimado(presupuesto_estimado);
+        // Leer del JSON si vienen presentes
+        if (body.containsKey("destino")) {
+            p.setDestino(Objects.toString(body.get("destino"), null));
+        }
+        if (body.containsKey("fecha_inicio")) {
+            String fi = Objects.toString(body.get("fecha_inicio"), null);
+            if (fi != null) p.setFecha_inicio(LocalDate.parse(fi));
+        }
+        if (body.containsKey("fecha_fin")) {
+            String ff = Objects.toString(body.get("fecha_fin"), null);
+            if (ff != null) p.setFecha_fin(LocalDate.parse(ff));
+        }
+        if (body.containsKey("presupuesto_estimado")) {
+            Double pe = (body.get("presupuesto_estimado") == null) ? null :
+                    Double.valueOf(body.get("presupuesto_estimado").toString());
+            if (pe != null) p.setPresupuesto_estimado(pe);
+        }
 
-        presupuestoRepository.save(presupuesto);
+        presupuestoRepository.save(p);
 
         response.put("status", "success");
         response.put("message", "Presupuesto actualizado correctamente.");
-        response.put("presupuesto", presupuesto);
-
+        response.put("presupuesto", p);
         return response;
     }
 

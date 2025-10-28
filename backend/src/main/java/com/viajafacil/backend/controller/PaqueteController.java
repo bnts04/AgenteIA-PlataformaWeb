@@ -40,14 +40,19 @@ public class PaqueteController {
 
     //  PUT: actualizar paquete
     @PutMapping("/{id}")
-    public Paquete updatePaquete(@PathVariable Long id, @RequestBody Paquete detallesPaquete) {
-        Optional<Paquete> paqueteExistente = paqueteRepository.findById(id);
+    public Paquete updatePaquete(@PathVariable Long id,
+                                 @RequestBody Paquete detallesPaquete) {// Recibe el cuerpo JSON con los nuevos datos
 
-        if (paqueteExistente.isPresent()) {
-            Paquete paquete = paqueteExistente.get();
+        Optional<Paquete> paqueteExistente = paqueteRepository.findById(id);// Busca si el paquete existe
+
+
+        if (paqueteExistente.isPresent()) {// Si se encontró el paquete
+            Paquete paquete = paqueteExistente.get();// Obtiene la entidad existente
+            // Actualiza los campos editables con los valores recibidos
             paquete.setDescripcion(detallesPaquete.getDescripcion());
             paquete.setCategoria(detallesPaquete.getCategoria());
             paquete.setPrecio_base(detallesPaquete.getPrecio_base());
+            // Guarda los cambios en la base de datos y retorna el paquete actualizado
             return paqueteRepository.save(paquete);
         } else {
             return null; // podrías reemplazar por ResponseEntity con 404
@@ -55,10 +60,13 @@ public class PaqueteController {
     }
 
     //  DELETE: eliminar paquete
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/{id}")// Define el endpoint DELETE /paquetes/{id}
     public String deletePaquete(@PathVariable Long id) {
+        // Verifica si existe el paquete con el ID recibido
         if (paqueteRepository.existsById(id)) {
+            // Si existe, lo elimina de la base de datos
             paqueteRepository.deleteById(id);
+            // Devuelve mensaje de confirmación
             return "Paquete con id " + id + " eliminado correctamente.";
         } else {
             return "Paquete con id " + id + " no encontrado.";

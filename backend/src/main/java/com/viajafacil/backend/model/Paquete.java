@@ -1,14 +1,15 @@
 package com.viajafacil.backend.model;
 
-import jakarta.persistence.*;
+import jakarta.persistence.*;// Librería JPA: provee las anotaciones para mapear la clase a la base de datos
 
-@Entity
-@Table(name = "paquete")
+@Entity // Indica que esta clase será una tabla en la base de datos
+@Table(name = "paquete") // Define el nombre exacto de la tabla en la BD
 public class Paquete {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id_paquete;
+    @Id // Marca el campo como clave primaria (PRIMARY KEY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // Generación automática del ID
+
+    private Long id_paquete;// Identificador único del paquete turístico
 
     private String descripcion;
 
@@ -17,7 +18,7 @@ public class Paquete {
     private Double precio_base;
 
     public Paquete() {}
-
+    // Constructor
     public Paquete(String descripcion, String categoria, Double precio_base) {
         this.descripcion = descripcion;
         this.categoria = categoria;

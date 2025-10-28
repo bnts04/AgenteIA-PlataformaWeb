@@ -1,28 +1,27 @@
-
 package com.viajafacil.backend.model;
 
-import jakarta.persistence.*;
-import java.time.LocalDateTime;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;        // Contiene las anotaciones de JPA (@Entity, @Id, @Column, etc.)
+import java.time.LocalDateTime;      // Permite manejar fecha y hora del sistema (sin zona horaria)
+import jakarta.persistence.Entity;   // Marca la clase como entidad JPA
+import jakarta.persistence.GeneratedValue; // Controla la generación automática del ID
+import jakarta.persistence.Table;    // Permite definir el nombre de la tabla en la base de datos
 
-@Entity
-@Table(name = "consultas_chat")
+@Entity // Marca esta clase como entidad de base de datos
+@Table(name = "consultas_chat")// Define el nombre de la tabla en la BD
 public class ConsultaChat {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long id;// Identificador único de cada registro
 
-    private Long usuarioId;
-    private String mensajeUsuario;
+    private Long usuarioId; // Guarda el ID del usuario que hizo la consulta
+    private String mensajeUsuario; // Mensaje enviado por el usuario
 
-    @Column(columnDefinition = "TEXT")
-    private String respuestaIA;
+    @Column(columnDefinition = "TEXT") // Permite guardar textos largos (respuesta de IA)
+    private String respuestaIA; // Respuesta generada por la inteligencia artificial
 
 
-    private LocalDateTime fecha = LocalDateTime.now();
+    private LocalDateTime fecha = LocalDateTime.now();// Fecha y hora automáticas al crear la consulta
 
     // Getters y Setters
     public Long getId() { return id; }
