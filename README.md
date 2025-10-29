@@ -116,11 +116,6 @@ o si osi
 
 ## Autores
 
-- Benyamin Nilo Sotelo Taboada : Lider de equipo, desarrollador de backend
-
-- Sandro Raphael Díaz Maguiña : Jugador profesional de Left 4 Dead, Alias Bebanaytor, desarrollador de SQL y apartado de administración
-
-- Fabrizzio Giovanni Prada Salas : Futuro lider de la escena, desarrollador de Frontend y documentación.
 
 ## Licencia
 Este proyecto se distribuye bajo la licencia MIT.  
