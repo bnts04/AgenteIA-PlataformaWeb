@@ -9,5 +9,5 @@ public interface ConsultaChatRepository extends JpaRepository<ConsultaChat, Long
     // Hereda de JpaRepository todos los métodos CRUD (findAll, save, deleteById, findById, etc.)
 
     // Método personalizado: busca todas las consultas según el ID del usuario
-    List<ConsultaChat> findByUsuarioId(Long usuarioId);
+    List<ConsultaChat> findByUsuarioIdOrderByFechaAsc(Long usuarioId);
 }
