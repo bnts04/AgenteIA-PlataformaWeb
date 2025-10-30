@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ViajaFácil</title>
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Iconos -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg fixed-top">
+  <div class="container">
+    <!-- Logo -->
+    <a class="navbar-brand" href="#">
+      <img src="Imagenes/ViajaFacillg.png" alt="ViajaFácil" class="logo">
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Menú -->
+    <div class="collapse navbar-collapse" id="menu">
+     <ul class="navbar-nav mx-auto">
+  <li class="nav-item"><a class="nav-link" href="#"><i class="bi bi-airplane"></i> Vuelo</a></li>
+  <li class="nav-item"><a class="nav-link" href="reservas.html"><i class="bi bi-journal-text"></i> Reservas</a></li>
+  <li class="nav-item"><a class="nav-link" href="paquetes.html"><i class="bi bi-gift"></i> Paquetes</a></li>
+  <li class="nav-item"><a class="nav-link" href="#"><i class="bi bi-question-circle"></i> Ayuda</a></li>
+  <li class="nav-item"><a class="nav-link" href="promociones.html"><i class="bi bi-percent"></i> Promociones</a></li>
+</ul>
+
+
+      <!-- Login (solo icono) y Registrar -->
+      <div class="d-flex align-items-center">
+        <a href="login.html" class="btn-login"><i class="bi bi-person"></i></a>
+        <a href="registro.html" class="btn btn-registrar">REGISTRAR</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+<main>
+
+<!-- Hero / Carrusel -->
+<div id="heroCarousel" class="carousel slide mt-5 pt-4" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="https://images.ctfassets.net/q33z48p65a6w/7FuBpTPrAavmfy90B2Hukd/39e82e86fa8a05787c3989d410f3d01b/pexels-frans-van-heerden-632522.jpg?fm=webp&h=1192&q=80&w=1920" class="d-block w-100" alt="Destino 1">
+      <div class="carousel-caption">
+        <h2>Tu destino</h2>
+        <h4>A un click de distancia</h4>
+        <p>Hacemos que encontrar y reservar tus vuelos sea una experiencia rápida segura y sin complicaciones, para disfrutar tu próximo destino.</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="https://c4.wallpaperflare.com/wallpaper/464/73/123/athabasca-canada-cataratas-montanas-wallpaper-preview.jpg" class="d-block w-100" alt="Destino 2">
+      <div class="carousel-caption">
+        <h2>Explora</h2>
+        <h4>Destinos únicos</h4>
+        <p>Disfruta experiencias diseñadas a tu medida con ViajaFácil.</p>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </button>
+</div>
+
+<!-- Paquetes flotantes -->
+<section class="container paquetes">
+  <div class="row g-4">
+    <div class="col-md-3">
+      <div class="card">
+        <img src="https://olas.pe/wp-content/uploads/2024/11/Cuales-son-las-mejores-playas-de-Piura.jpg" class="card-img-top" alt="Mancora">
+        
+        <div class="card-body">
+          <h5 class="card-title">
+              <span class="texto-azul-fuerteee">Mancora</span>
+          </h5>
+        <p class="fw-bold" style="color: #1271B6;">Año Nuevo</p>
+
+          <a href="paquetes.html" class="btn btn-comprar">Saber más</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card">
+        <img src="https://image-tc.galaxy.tf/wijpeg-7ellqz2uqv2l9plk30futx9jr/experiencias-machu-picchu_wide.jpg?crop=0%2C63%2C1200%2C675" class="card-img-top" alt="MachuPicchu">
+       
+        <div class="card-body">
+        <h5 class="card-title">
+  <span class="texto-azul-fuerte">MachuPicchu Cusco</span>
+</h5>
+
+<p class="texto-dorado fw-bold">Año Nuevo</p>
+          <a href="paquetes.html" class="btn btn-comprar">Saber más</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTk_fSEbi071o8Dw-inegLkcc-gRolOLkMn2A&s" class="card-img-top" alt="Huacachina">
+        <div class="card-body">
+          <h5 class="card-title">
+           <span class="texto-azul-fuer">Puno y el Lago Titicaca</span> 
+          </h5>
+        <p class="fw-bold" style="color: #1271B6;">Año Nuevo</p>
+          <a href="paquetes.html" class="btn btn-comprar">Saber más</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card">
+        <img src="https://www.mevoydeviaje.com/content/images/thumbs/0004129_tarapoto-week-exp_600.png" class="card-img-top" alt="Islas Ballestas">
+        <div class="card-body">
+          <h5 class="card-title">
+            <span class="texto-azul-fue">Tarapoto</span>
+          </h5>
+        <p class="fw-bold" style="color: #1271B6;">Año Nuevo</p>
+
+          <a href="paquetes.hmtl" class="btn btn-comprar">Saber más</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+   <!-- Botón flotante -->
+      <div id="chatbot-btn" onclick="toggleChatbot()">
+        <i class="bi bi-robot"></i>
+        <span>¡Planea tu viaje conmigo!</span>
+      </div>
+
+      <!-- Ventana del chatbot -->
+      <div id="chatbot-window" class="chatbot-window">
+        <div class="chatbot-header">
+          <i class="bi bi-robot"></i> Asistente de Viajes
+          <button class="close-btn" onclick="toggleChatbot()">&times;</button>
+        </div>
+        <div id="chatbot-messages" class="chatbot-messages">
+          
+        </div>
+        <div class="chatbot-input">
+          <input id="user-input" type="text" placeholder="Escribe tu mensaje...">
+          <button onclick="sendMessage()"><i class="bi bi-send"></i></button>
+        </div>
+      </div>
+
+<!-- Sección ¿Por qué elegir ViajaFácil? -->
+<section class="container mb-5 porque" style="margin-top: 180px;">
+  <div class="row align-items-center">
+    <div class="col-md-6">
+      <img src="https://citygame.com/wp-content/blogs.dir/1/files/sites/37/2022/11/City-Game-Cancun-1920x1080.jpg" class="img-fluid rounded-4 shadow" alt="ViajaFácil">
+    </div>
+    <div class="col-md-6">
+      <h2 class="fw-bold text-primary">¿Por qué elegir ViajaFacil?</h2>
+      <h5 class="mt-3">Viaja a tu manera</h5>
+      <p>En ViajaFácil, tú decides cómo vivir tus vacaciones. No hay complicaciones ni horarios rígidos: solo experiencias diseñadas a tu medida. Desde paquetes económicos hasta planes premium, disfruta de viajes que se adaptan a tus sueños y a tu presupuesto.</p>
+
+      <h5 class="mt-4">Opciones para todos</h5>
+      <p>Diseñamos itinerarios completos y personalizados para que viajes con tu familia, pareja o amigos sin preocuparte por la logística. Sea que busques un plan económico para ahorrar, una experiencia equilibrada con todo lo necesario o unas vacaciones de lujo, en ViajaFácil siempre tendrás una alternativa hecha a tu medida.</p>
+
+      <h5 class="mt-4">Entretenimiento y experiencias</h5>
+      <p>Explora actividades únicas, descubre destinos fascinantes y vive momentos inolvidables pensados para cada tipo de viajero. Con ViajaFácil, no solo viajas... creas recuerdos que duran para siempre.</p>
+    </div>
+  </div>
+</section>
+<!-- Sección Formulario Buscar Vuelos -->
+<section class="formulario-vuelos container my-5">
+  <div class="form-card">
+    <h3 class="fw-bold text-primary mb-1">
+      Buscar Vuelos <i class="bi bi-airplane"></i>
+    </h3>
+    <p class="text-muted mb-3">Ida y vuelta u opción solo ida.</p>
+
+    <form>
+      <div class="row g-3">
+
+        <div class="col-12">
+          <label for="soloIdaToggle" class="field-label">Solo ida</label>
+          <div class="solo-input">
+            <div class="d-flex align-items-center">
+              <i class="bi bi-arrow-right-left"></i>
+              <div class="ms-2">
+                <div class="small fw-bold">Solo ida</div>
+                <div class="small text-muted">Activa para viajar solo de ida</div>
+              </div>
+            </div>
+
+            <div>
+              <label class="switch mb-0">
+                <input id="soloIdaToggle" type="checkbox" aria-label="Solo ida">
+                <span class="slider round"></span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Origen -->
+        <div class="col-md-6">
+          <label for="origen" class="field-label">Origen</label>
+          <div class="input-group big-input">
+            <span class="input-group-text"><i class="bi bi-geo-alt"></i></span>
+            <input id="origen" type="text" class="form-control" placeholder="Ciudad o aeropuerto">
+          </div>
+        </div>
+
+        <!-- Destino -->
+        <div class="col-md-6">
+          <label for="destino" class="field-label">Destino</label>
+          <div class="input-group big-input">
+            <span class="input-group-text"><i class="bi bi-geo-alt-fill"></i></span>
+            <input id="destino" type="text" class="form-control" placeholder="Ciudad o aeropuerto">
+          </div>
+        </div>
+
+        <!-- Salida -->
+        <div class="col-md-6">
+          <label for="salida" class="field-label">Salida</label>
+          <div class="input-group big-input">
+            <span class="input-group-text"><i class="bi bi-calendar-event"></i></span>
+            <input id="salida" type="date" class="form-control">
+          </div>
+        </div>
+
+        <!-- Regreso (se oculta cuando "Solo ida" está activo) -->
+        <div id="regreso-group" class="col-md-6">
+          <label for="regreso" class="field-label">Regreso</label>
+          <div class="input-group big-input">
+            <span class="input-group-text"><i class="bi bi-calendar-check"></i></span>
+            <input id="regreso" type="date" class="form-control">
+          </div>
+        </div>
+
+        <!-- Pasajeros -->
+        <div class="col-md-6">
+          <label for="pasajeros" class="field-label">Pasajeros</label>
+          <div class="input-group big-input">
+            <span class="input-group-text"><i class="bi bi-people"></i></span>
+            <select id="pasajeros" class="form-select">
+              <option>1 Pasajero</option>
+              <option>2 Pasajeros</option>
+              <option>3+</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Clase -->
+        <div class="col-md-6">
+          <label for="clase" class="field-label">Clase</label>
+          <div class="input-group big-input">
+            <span class="input-group-text"><i class="bi bi-briefcase"></i></span>
+            <select id="clase" class="form-select">
+              <option>Bajo</option>
+              <option>Medio</option>
+              <option>Alto</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <p class="politicas mt-3">
+        Al continuar aceptas nuestras políticas de tarifa y equipaje.
+      </p>
+
+      <div class="text-center mt-4">
+        <button type="submit" class="btn btn-primary px-4 me-3">Buscar vuelos</button>
+        <button type="reset" class="btn btn-outline-primary px-4">Cancelar</button>
+      </div>
+    </form>
+  </div>
+<!-- Newsletter -->
+<section class="newsletter mt-5 text-center">
+  <h4 class="mb-2">Recibir ofertas</h4>
+  <p class="text-muted mb-4">Promos exclusivas y tips para viajar mejor</p>
+  
+  <form class="row justify-content-center g-2">
+    <div class="col-md-5 col-sm-12">
+      <div class="input-group big-input">
+        <span class="input-group-text"><i class="bi bi-envelope"></i></span>
+        <input type="email" class="form-control" placeholder="Tu correo electrónico" required>
+      </div>
+    </div>
+    <div class="col-md-2 col-sm-12">
+      <button class="btn btn-primary w-100" type="submit">Suscribirse</button>
+    </div>
+  </form>
+</section>
+</main>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="footer-logo">
+      <img src="Imagenes/ViajaFacillg.png" alt="ViajaFácil" width="160">
+      <div class="footer-info mt-3">
+        <p><i class="bi bi-whatsapp"></i> 0000000000</p>
+        <p><i class="bi bi-envelope"></i> hola@viajafacil.com</p>
+        <p><i class="bi bi-telephone"></i> +6222 9999 7891</p>
+      </div>
+    </div>
+
+    <!-- Columnas -->
+    <div class="footer-col">
+      <h5>Nosotros</h5>
+      <ul>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Tips de viaje</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h5>Destinos</h5>
+      <ul>
+        <li><a href="#">Playa</a></li>
+        <li><a href="#">Montaña</a></li>
+        <li><a href="#">Eventos</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h5>Soporte</h5>
+      <ul>
+        <li><a href="#">Política de privacidad</a></li>
+        <li><a href="#">Términos y condiciones</a></li>
+      </ul>
+      <h5 class="mt-3">Síguenos</h5>
+      <div>
+        <a href="#"><i class="bi bi-instagram"></i></a>
+        <a href="#"><i class="bi bi-facebook"></i></a>
+        <a href="#"><i class="bi bi-twitter"></i></a>
+        <a href="#"><i class="bi bi-youtube"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    © 2025 ViajaFácil. Todos los derechos reservados.
+  </div>
+</footer>
+
+
+
+
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Tu JS -->
+<script src="script.js"></script>
+
+</body>
+</html>
