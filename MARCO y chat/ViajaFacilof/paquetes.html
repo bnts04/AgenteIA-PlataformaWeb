@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explora paquetes de viaje nacionales e internacionales con ViajaFácil. Encuentra ofertas exclusivas para Año Nuevo.">
+  <title>Paquetes de Viaje - ViajaFácil</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Iconos -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- Estilos personalizados -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/paquetes.css">
+  <link rel="icon" href="Imagenes/favicon.ico">
+</head>
+
+<body>
+  <!-- ======= NAVBAR ======= -->
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="Imagenes/ViajaFacillg.png" alt="ViajaFácil" class="logo">
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-label="Abrir menú de navegación">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="menu">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item"><a class="nav-link" href="#"><i class="bi bi-airplane"></i> Vuelo</a></li>
+          <li class="nav-item"><a class="nav-link" href="reservas.html"><i class="bi bi-journal-text"></i> Reservas</a></li>
+          <li class="nav-item"><a class="nav-link active" href="paquetes.html"><i class="bi bi-gift"></i> Paquetes</a></li>
+          <li class="nav-item"><a class="nav-link" href="#"><i class="bi bi-question-circle"></i> Ayuda</a></li>
+          <li class="nav-item"><a class="nav-link" href="promociones.html"><i class="bi bi-percent"></i> Promociones</a></li>
+        </ul>
+
+        <div class="d-flex align-items-center">
+          <a href="login.html" class="btn-login"><i class="bi bi-person"></i></a>
+          <a href="registro.html" class="btn btn-registrar">REGISTRAR</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ======= CONTENIDO PRINCIPAL ======= -->
+   
+  <main class="mt-5 pt-5 container">
+
+    <!-- LISTADO DE PAQUETES -->
+    <section id="listado-paquetes">
+      <a href="index.html" class="text-secondary d-inline-block mt-4 mb-4">
+        <i class="bi bi-arrow-left"></i> Volver
+      </a>
+
+      <!-- ======= NACIONALES ======= -->
+      <h2 class="seccion-titulo">Destinos Nacionales</h2>
+      <div class="row g-4 paquetes-lista mb-5">
+
+        <!-- MÁNCORA -->
+        <div class="col-md-3 col-sm-6">
+          <div class="card card-paquete">
+            <img src="https://bushop.com/wp-content/uploads/sites/10/mancora-playa-790x464.jpg" class="card-img-top" alt="Arequipa">
+            <div class="card-body-paquete">
+              <div>
+                <h5 class="card-title fw-bold">Noches en Mancora</h5>
+                <p class="text-danger fw-bold mb-1">Todo el año</p>
+                <p class="details mb-2">Salidas diarias</p>
+                <p class="details mb-3">Hotel + Tour<br>3 días, 2 noches</p>
+              </div>
+              <button class="btn btn-comprar" type="button" onclick="mostrarItinerario('Máncora')">Saber más</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- CUSCO -->
+         <div class="col-md-3 col-sm-6">
+          <div class="card card-paquete">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Machu_Picchu%2C_Peru_%282018%29.jpg/1200px-Machu_Picchu%2C_Peru_%282018%29.jpg" class="card-img-top" alt="Arequipa">
+            <div class="card-body-paquete">
+              <div>
+                <h5 class="card-title fw-bold">MachuPicchu Cusco</h5>
+                <p class="text-danger fw-bold mb-1">Todo el año</p>
+                <p class="details mb-2">Salidas diarias</p>
+                <p class="details mb-3">Hotel + Tour<br>3 días, 2 noches</p>
+              </div>
+              <button class="btn btn-comprar" type="button" onclick="mostrarItinerario('Cusco')">Saber más</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- LAGO TITICACA -->
+        <div class="col-md-3 col-sm-6">
+          <div class="card card-paquete">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTk_fSEbi071o8Dw-inegLkcc-gRolOLkMn2A&s" class="card-img-top" alt="Arequipa">
+            <div class="card-body-paquete">
+              <div>
+                <h5 class="card-title fw-bold">Puno y el Lago Titicaca</h5>
+                <p class="text-danger fw-bold mb-1">Todo el año</p>
+                <p class="details mb-2">Salidas diarias</p>
+                <p class="details mb-3">Hotel + Tour<br>3 días, 2 noches</p>
+              </div>
+              <button class="btn btn-comprar" type="button" onclick="mostrarItinerario('Arequipa')">Saber más</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- TARAPOTO -->
+        <div class="col-md-3 col-sm-6">
+          <div class="card card-paquete">
+            <img src="https://images.squarespace-cdn.com/content/v1/55f702a4e4b0794fbe24736b/1588083030088-0TY0LYRFHCPJ3PFDLAV1/Tropical+Tarapoto+-+Pumarinri+Waterfall+-+Banner.jpg?format=1500w" class="card-img-top" alt="Selva Central">
+            <div class="card-body-paquete">
+              <div>
+                <h5 class="card-title fw-bold">Tarapoto</h5>
+                <p class="text-danger fw-bold mb-1">Todo el año</p>
+                <p class="details mb-2">Salidas los fines de semana</p>
+                <p class="details mb-3">Bus + Hotel + Tours<br>4 días, 3 noches</p>
+              </div>
+              <button class="btn btn-comprar" type="button" onclick="mostrarItinerario('Selva Central')">Saber más</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+   <!-- ======= INTERNACIONALES ======= -->
+<h2 class="seccion-titulo">Destinos Internacionales</h2>
+
+<!-- 🌍 Primera fila de internacionales -->
+<div class="row g-4 paquetes-lista mb-5">
+  <!-- DUBÁI -->
+  <div class="col-md-3 col-sm-6">
+    <div class="card card-paquete">
+      <img src="https://voyadubai.com/wp-content/uploads/2024/10/Donde-alojarse-en-Dubai.jpg" class="card-img-top" alt="Dubái">
+      <div class="card-body-paquete">
+        <div>
+          <h5 class="card-title fw-bold">Semana en Dubái</h5>
+          <p class="text-danger fw-bold mb-1">Todo el año</p>
+          <p class="details mb-2">Salidas semanales</p>
+          <p class="details mb-3">Hotel + Vuelo + Tour<br>6 días, 5 noches</p>
+        </div>
+        <button class="btn btn-comprar" type="button" onclick="mostrarItinerario('Dubái')">Saber más</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ORLANDO -->
+  <div class="col-md-3 col-sm-6">
+    <div class="card card-paquete">
+      <img src="https://www.worldatlas.com/upload/42/43/00/shutterstock-1758758000.jpg" class="card-img-top" alt="Orlando">
+      <div class="card-body-paquete">
+        <div>
+          <h5 class="card-title fw-bold">Magia en Orlando</h5>
+          <p class="text-danger fw-bold mb-1">Vacaciones</p>
+          <p class="details mb-2">Fechas flexibles</p>
+          <p class="details mb-3">Hotel + Vuelo + Entradas<br>5 días, 4 noches</p>
+        </div>
+        <button class="btn btn-comprar" type="button" onclick="mostrarItinerario('Orlando')">Saber más</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MIAMI -->
+  <div class="col-md-3 col-sm-6">
+    <div class="card card-paquete">
+      <img src="https://content.r9cdn.net/rimg/dimg/49/2b/79b8cf38-city-14305-16296e6ddcb.jpg?crop=true&width=1020&height=498" class="card-img-top" alt="Osaka">
+      <div class="card-body-paquete">
+        <div>
+          <h5 class="card-title fw-bold">Miami</h5>
+          <p class="text-danger fw-bold mb-1">Primavera</p>
+          <p class="details mb-2">Salidas en abril y mayo</p>
+          <p class="details mb-3">Hotel + Vuelo + Tour<br>7 días, 6 noches</p>
+        </div>
+        <button class="btn btn-comprar" type="button" onclick="mostrarItinerario('Osaka')">Saber más</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- OSAKA -->
+  <div class="col-md-3 col-sm-6">
+    <div class="card card-paquete">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnHYp5D7cx4btdn8Zt3sysSs73yIMyMiM9pgeQdxwicHN_vcrnh6WaYxMrjtA6dvfO2Hw&usqp=CAU" class="card-img-top" alt="París">
+      <div class="card-body-paquete">
+        <div>
+          <h5 class="card-title fw-bold">Descubre Osaka</h5>
+          <p class="text-danger fw-bold mb-1">Todo el año</p>
+          <p class="details mb-2">Salidas diarias</p>
+          <p class="details mb-3">Hotel + Vuelo + Tour<br>6 días, 5 noches</p>
+        </div>
+        <button class="btn btn-comprar" type="button" onclick="mostrarItinerario('París')">Saber más</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 🌍 Segunda fila de internacionales -->
+<div class="row g-4 paquetes-lista mt-5">
+  <!-- CHINA -->
+  <div class="col-md-3 col-sm-6">
+    <div class="card card-paquete">
+      <img src="https://es.gizmodo.com/app/uploads/2025/02/Diseno-sin-titulo-45-20.jpg" class="card-img-top" alt="Cancún">
+      <div class="card-body-paquete">
+        <div>
+          <h5 class="card-title fw-bold">La Gran Muralla China</h5>
+          <p class="text-danger fw-bold mb-1">Año Nuevo</p>
+          <p class="details mb-2">30 de diciembre</p>
+          <p class="details mb-3">Hotel + Vuelo<br>5 días, 4 noches</p>
+        </div>
+        <button class="btn btn-comprar" type="button" onclick="mostrarItinerario('Cancún')">Saber más</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ROMA -->
+  <div class="col-md-3 col-sm-6">
+    <div class="card card-paquete">
+      <img src="https://plus.unsplash.com/premium_photo-1661963952208-2db3512ef3de?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YW50aWd1YSUyMHJvbWF8ZW58MHx8MHx8fDA%3D&fm=jpg&q=60&w=3000" class="card-img-top" alt="Cartagena">
+      <div class="card-body-paquete">
+        <div>
+          <h5 class="card-title fw-bold">Coliseo Romano</h5>
+          <p class="text-danger fw-bold mb-1">Todo el año</p>
+          <p class="details mb-2">Salidas semanales</p>
+          <p class="details mb-3">Hotel + Vuelo<br>4 días, 3 noches</p>
+        </div>
+        <button class="btn btn-comprar" type="button" onclick="mostrarItinerario('Cartagena')">Saber más</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- BRASIL -->
+  <div class="col-md-3 col-sm-6">
+    <div class="card card-paquete">
+      <img src="https://dynamic-media.tacdn.com/media/photo-o/30/33/90/d9/caption.jpg?w=700&h=500&s=1" class="card-img-top" alt="Punta Cana">
+      <div class="card-body-paquete">
+        <div>
+          <h5 class="card-title fw-bold">Cristo Redentor en Brasil</h5>
+          <p class="text-danger fw-bold mb-1">Año Nuevo</p>
+          <p class="details mb-2">29 de diciembre</p>
+          <p class="details mb-3">Hotel + Vuelo<br>6 días, 5 noches</p>
+        </div>
+        <button class="btn btn-comprar" type="button" onclick="mostrarItinerario('Punta Cana')">Saber más</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- FRANCE -->
+  <div class="col-md-3 col-sm-6">
+    <div class="card card-paquete">
+      <img src="https://e01-elmundo.uecdn.es/assets/multimedia/imagenes/2023/03/30/16801663970469.jpg" class="card-img-top" alt="Buenos Aires">
+      <div class="card-body-paquete">
+        <div>
+          <h5 class="card-title fw-bold">Torre Eiffel Francia</h5>
+          <p class="text-danger fw-bold mb-1">Todo el año</p>
+          <p class="details mb-2">Salidas diarias</p>
+          <p class="details mb-3">Hotel + Vuelo<br>4 días, 3 noches</p>
+        </div>
+        <button class="btn btn-comprar" type="button" onclick="mostrarItinerario('Buenos Aires')">Saber más</button>
+      </div>
+    </div>
+  </div>
+</div>
+    </section>
+
+    <!-- ======= ITINERARIO DETALLE ======= -->
+    <section id="itinerario-detalle" class="itinerario-container d-none">
+      <a href="#" class="text-secondary d-inline-block mt-3 mb-4" onclick="mostrarListado()">
+        <i class="bi bi-arrow-left"></i> Volver
+      </a>
+
+      <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1 class="fw-bold" id="itinerario-titulo">Itinerario</h1>
+        <div class="precio-pill" id="itinerario-precio">
+          Por persona desde S/1,375.88 (USD 396)
+        </div>
+      </div>
+
+      <!-- Aquí se inyecta contenido dinámico -->
+      <div id="contenido-itinerario" class="itinerario-content">
+        <p>Selecciona un destino para ver el itinerario detallado.</p>
+      </div>
+
+      <div class="text-center mt-5 mb-5">
+        <a href="reservas.html" class="btn btn-continuar">Continuar</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- ======= FOOTER ======= -->
+  <footer role="contentinfo">
+    <div class="container">
+      <div class="footer-logo">
+        <img src="Imagenes/ViajaFacillg.png" alt="ViajaFácil" width="160">
+        <div class="footer-info mt-3">
+          <p><i class="bi bi-whatsapp"></i> 0000000000</p>
+          <p><i class="bi bi-envelope"></i> hola@viajafacil.com</p>
+          <p><i class="bi bi-telephone"></i> +6222 9999 7891</p>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h5>Nosotros</h5>
+        <ul>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Tips de viaje</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Destinos</h5>
+        <ul>
+          <li><a href="#">Playa</a></li>
+          <li><a href="#">Montaña</a></li>
+          <li><a href="#">Eventos</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Soporte</h5>
+        <ul>
+          <li><a href="#">Política de privacidad</a></li>
+          <li><a href="#">Términos y condiciones</a></li>
+        </ul>
+
+        <h5 class="mt-3">Síguenos</h5>
+        <div>
+          <a href="https://instagram.com" target="_blank"><i class="bi bi-instagram"></i></a>
+          <a href="https://facebook.com" target="_blank"><i class="bi bi-facebook"></i></a>
+          <a href="https://twitter.com" target="_blank"><i class="bi bi-twitter"></i></a>
+          <a href="https://youtube.com" target="_blank"><i class="bi bi-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      © 2025 ViajaFácil. Todos los derechos reservados.
+    </div>
+  </footer>
+
+  <!-- ======= SCRIPTS ======= -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="paquetes.js"></script>
+
+</body>
+</html>
