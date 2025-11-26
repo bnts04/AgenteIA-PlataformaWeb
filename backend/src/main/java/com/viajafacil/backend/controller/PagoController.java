@@ -9,8 +9,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder; //
 
-import java.time.LocalDateTime;// Tipo para representar horas (sin fecha)
+import java.time.LocalDateTime;
 import java.util.*;
 
 @RestController
@@ -21,28 +22,30 @@ public class PagoController {
     @Autowired private PagoRepository pagoRepository;
     @Autowired private ReservaRepository reservaRepository;
 
-    // Entradas del DTO , la transeferencia de datos
+    // DTO para crear pago
     public static class PagoRequest {
         public Long reservaId;
         public Double monto;
-        public String metodo;     // Efectivo, Tarjeta, Yape, Plin,Transferencia
-        public String estado;     // opcional (si no llega, se mantiene el default del entity)
+        public String metodo;     // Efectivo, Tarjeta, Yape, Plin, Transferencia
+        public String estado;     // opcional
         @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy HH:mm")
-        public LocalDateTime fechaPago; // opcional si no llega, @PrePersist
+        public LocalDateTime fechaPago; // opcional
     }
 
+    // DTO para actualizar pago
     public static class PagoUpdateRequest {
         public Double monto;      // opcional
         public String metodo;     // opcional
         public String estado;     // opcional
     }
 
-    // ---------- CREATE (confirma la reserva) ----------
+    // ---------- CREATE (confirma la reserva y genera URL de boleta) ----------
     @PostMapping
     @Transactional
     public Map<String, Object> registrarPago(@RequestBody PagoRequest req) {
         Map<String, Object> resp = new LinkedHashMap<>();
 
+        // Validaciones simples
         if (req == null || req.reservaId == null || req.monto == null ||
                 req.metodo == null || req.metodo.isBlank()) {
             resp.put("status", "error");
@@ -50,6 +53,7 @@ public class PagoController {
             return resp;
         }
 
+        // Buscar reserva
         Optional<Reserva> resOpt = reservaRepository.findById(req.reservaId);
         if (resOpt.isEmpty()) {
             resp.put("status", "error");
@@ -63,17 +67,26 @@ public class PagoController {
         p.setReserva(reserva);
         p.setMonto(req.monto);
         p.setMetodo(req.metodo.toUpperCase());
-        if (req.estado != null && !req.estado.isBlank()) p.setEstado(req.estado);
-        if (req.fechaPago != null) p.setFecha_pago(req.fechaPago);
+        if (req.estado != null && !req.estado.isBlank()) {
+            p.setEstado(req.estado);
+        }
+        if (req.fechaPago != null) {
+            p.setFecha_pago(req.fechaPago);
+        }
 
         Pago guardado = pagoRepository.save(p);
 
-        // 2) Confirmar la reserva (si no lo estaba)
-        if (!"confirmado".equalsIgnoreCase(reserva.getEstado_reserva())) {
-            reserva.setEstado_reserva("confirmado");
-            reservaRepository.save(reserva);
-        }
 
+        //  Construir URL de la boleta PDF
+        //    Asumiendo que tu endpoint de PDF es: GET /pdf/boleta/{idPago}
+        String baseUrl = ServletUriComponentsBuilder
+                .fromCurrentContextPath()
+                .build()
+                .toUriString();
+
+        String urlBoletaPdf = baseUrl + "/pdf/boleta/" + guardado.getId_pago();
+
+        // 4) Armar respuesta
         resp.put("status", "success");
         resp.put("message", "Pago registrado y reserva confirmada");
         resp.put("pago", guardado);
@@ -81,6 +94,8 @@ public class PagoController {
                 "id_reserva", reserva.getId_reserva(),
                 "estado_reserva", reserva.getEstado_reserva()
         ));
+        resp.put("url_boleta_pdf", urlBoletaPdf); //
+
         return resp;
     }
 
@@ -116,7 +131,7 @@ public class PagoController {
         return pagoRepository.filter(m, desde, hasta);
     }
 
-    //UPDATE
+    // UPDATE
     @PutMapping("/{id}")
     public Map<String, Object> actualizarPago(@PathVariable Long id,
                                               @RequestBody PagoUpdateRequest req) {
@@ -142,7 +157,7 @@ public class PagoController {
         return resp;
     }
 
-    //  DELETE
+    // DELETE
     @DeleteMapping("/{id}")
     public Map<String, Object> eliminarPago(@PathVariable Long id) {
         Map<String, Object> resp = new LinkedHashMap<>();

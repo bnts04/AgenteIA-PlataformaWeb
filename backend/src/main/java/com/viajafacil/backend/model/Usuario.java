@@ -1,6 +1,7 @@
 package com.viajafacil.backend.model;
 
 import jakarta.persistence.*;
+import java.time.LocalDate;
 
 @Entity
 // Indica que esta clase representa una tabla en la base de datos
@@ -17,6 +18,16 @@ public class Usuario {
     private String correo;
     private String contrasena;
     private String telefono;
+
+    // NUEVOS CAMPOS:
+    @Column(name = "documento_identidad", length = 20, nullable = false, unique = true)
+    private String documentoIdentidad;
+
+    @Column(length = 50, nullable = false)
+    private String nacionalidad;
+
+    @Column(name = "fecha_nacimiento", nullable = false)
+    private LocalDate fechaNacimiento;
 
     // Getters y Setters
     public Long getId_usuario() {
@@ -66,4 +77,13 @@ public class Usuario {
     public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
+
+    public String getDocumentoIdentidad() { return documentoIdentidad; }
+    public void setDocumentoIdentidad(String documentoIdentidad) { this.documentoIdentidad = documentoIdentidad; }
+
+    public String getNacionalidad() { return nacionalidad; }
+    public void setNacionalidad(String nacionalidad) { this.nacionalidad = nacionalidad; }
+
+    public LocalDate getFechaNacimiento() { return fechaNacimiento; }
+    public void setFechaNacimiento(LocalDate fechaNacimiento) { this.fechaNacimiento = fechaNacimiento; }
 }
