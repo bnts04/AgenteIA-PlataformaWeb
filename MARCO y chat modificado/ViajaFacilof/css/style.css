@@ -1,0 +1,779 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+footer.footer-dark {
+  background-color: #1D202B;
+  width: 100%;
+  margin-top: auto; 
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background: #f8f9fa;
+}
+
+/* Navbar */
+.navbar {
+  height: 80px; 
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  padding: 0 20px;
+}
+
+/* Logo compacto */
+.navbar .logo {
+  max-height: 60px; 
+  width: auto;
+}
+
+/* Links del menú */
+.navbar-nav .nav-link {
+  color: #1271B6;          
+  font-weight: 600;
+  margin: 0 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.3s ease;
+}
+
+.navbar-nav .nav-link i {
+  font-size: 1.1rem;
+}
+
+/* Hover con transición */
+.navbar-nav .nav-link:hover {
+  color: #2E9AFE;
+  transform: translateY(-2px);
+}
+
+/* Icono Login */
+.btn-login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 2px solid #2E9AFE; 
+  color: #2E9AFE;
+  font-size: 1.2rem;
+  margin-right: 12px; 
+  transition: all 0.3s ease;
+}
+
+.btn-login:hover {
+  background: #2E9AFE;
+  color: #fff;
+}
+
+/* Botón Registrar */
+.btn-registrar {
+  background: #2E9AFE;  
+  border: 2px solid #2E9AFE;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 25px;
+  padding: 6px 20px;
+  transition: all 0.3s ease;
+}
+
+.btn-registrar:hover {
+  background: #1f6fb2;  
+  border-color: #1f6fb2;
+}
+
+
+/* Carrusel */
+.carousel-item img {
+  height: 550px;
+  object-fit: cover;
+  border-radius: 15px;
+}
+.carousel-caption {
+  bottom: 20%;
+  text-align: left;
+}
+.carousel-caption h2 {
+  font-size: 3rem;
+  font-weight: bold;
+}
+.carousel-caption p {
+  font-size: 1.2rem;
+}
+
+/* Cards flotantes */
+.texto-azul-fuerte {
+  color: #4A447D;         
+  font-weight: 700;         
+  letter-spacing: 0.5px;    
+  font-family: 'Poppins', sans-serif;
+}
+.texto-dorado {
+  color: #1271B6; 
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.texto-azul-fuerteee {
+  color: #4A447D;           
+  font-weight: 700;         
+  letter-spacing: 0.5px;    
+  font-family: 'Poppins', sans-serif; 
+}
+
+.texto-azul-fuer {
+  color: #4A447D;           
+  font-weight: 700;         
+  letter-spacing: 0.5px;    
+  font-family: 'Poppins', sans-serif; 
+}
+.texto-azul-fue {
+  color: #4A447D;           
+  font-weight: 700;         
+  letter-spacing: 0.5px;    
+  font-family: 'Poppins', sans-serif; 
+}
+
+
+.paquetes {
+  margin-top: -100px; 
+  position: relative;
+  z-index: 10;
+}
+.card {
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+.card img {
+  border-radius: 15px 15px 0 0;
+}
+.card img {
+  height: 200px;         
+  object-fit: cover;    
+  width: 100%;
+  border-radius: 15px 15px 0 0;
+}
+
+.card {
+  height: 100%;        
+  display: flex;
+  flex-direction: column;
+}
+
+.card-body {
+  flex-grow: 1;        
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.btn-comprar {
+  background: #2E9AFE;
+  color: white;
+  border-radius: 20px;
+  padding: 5px 15px;
+  font-weight: bold;
+}
+.btn-comprar:hover {
+  background: #1f6fb2;
+}
+.porque h2 {
+  font-size: 2.2rem;
+  color: #1271B6;
+}
+.porque h5 {
+  font-weight: bold;
+}
+.porque p {
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.6;
+}
+/* labels encima de inputs */
+.field-label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 700;
+  color: #2E9AFE; 
+  font-size: 0.95rem;
+}
+
+/* tarjeta del formulario */
+.form-card {
+  background: #f9fbfd;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0px 6px 20px rgba(0,0,0,0.08);
+}
+
+.big-input .form-control,
+.big-input .form-select {
+  height: 56px;
+  border-radius: 30px;
+  background: #d9ebfa;
+  border: none;
+  font-size: 1rem;
+  padding-left: 12px;
+}
+
+.big-input .input-group-text {
+  border: none;
+  background: #d9ebfa;
+  border-radius: 30px 0 0 30px;
+  font-size: 1.25rem;
+  color: #0056b3;
+  padding: 0 14px;
+}
+
+.big-input input[type="date"] {
+  padding-left: 10px; 
+}
+
+/* descripción de políticas */
+.politicas {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+/* botones */
+.form-card .btn {
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 12px 32px;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 46px;
+  height: 26px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: #cdddeb;
+  transition: 0.3s;
+  border-radius: 26px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px; width: 20px;
+  left: 3px;
+  top: 3px;
+  background-color: white;
+  transition: 0.3s;
+  border-radius: 50%;
+}
+
+.switch input:checked + .slider {
+  background-color: #2E9AFE;
+}
+
+.switch input:checked + .slider:before {
+  transform: translateX(20px);
+}
+
+@media (max-width: 767px) {
+  .form-card { padding: 20px; }
+  .big-input .form-control, .big-input .form-select { height: 48px; }
+}
+.solo-input {
+  background: #d9ebfa;
+  border-radius: 30px;
+  height: 56px;
+  padding: 10px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: none;
+}
+
+.solo-input .bi {
+  font-size: 1.35rem;
+  color: #0056b3;
+}
+
+.field-label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 700;
+  color: #2E9AFE;
+  font-size: 0.95rem;
+}
+
+.solo-input .small {
+  line-height: 1;
+  color: #0b3f6b;
+}
+
+.solo-input .switch { margin: 0; }
+
+.newsletter h4 {
+  font-weight: bold;
+}
+
+.newsletter .big-input .form-control {
+  padding: 14px;
+  font-size: 1rem;
+}
+
+.newsletter .btn {
+  border-radius: 30px; 
+  font-weight: bold;
+  padding: 14px 28px;
+}
+
+/* Footer */
+footer {
+  background-color: #131722; 
+  color: #fff;
+  padding: 40px 0 20px; 
+    padding-top: 20px; 
+
+}
+
+footer .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap; 
+}
+
+footer .footer-logo {
+  max-width: 220px;
+  margin-bottom: 20px;
+}
+
+footer .footer-info {
+  margin-top: 10px;
+}
+
+footer h5 {
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+footer ul {
+  list-style: none;
+  padding: 0;
+}
+
+footer ul li {
+  margin-bottom: 8px;
+}
+
+footer ul li a {
+  text-decoration: none;
+  color: #bbb;
+  transition: color 0.3s;
+}
+
+footer ul li a:hover {
+  color: #00A2FF;
+}
+
+footer .footer-bottom {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+  color: #aaa;
+}
+footer .footer-col {
+  margin-top: 90px; 
+}
+
+
+.navbar {
+  height: 70px;             
+  padding-top: 0; 
+  padding-bottom: 0; 
+  display: flex;
+  align-items: center;       
+}
+
+.navbar .logo {
+  max-height: 120px;          
+  width: auto;               
+}
+
+main {
+  margin-bottom: 120px; 
+}
+
+
+.login-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+.login-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f8f9fa;
+  overflow: hidden;
+}
+
+.oval-half {
+  width: 1800px;         
+  height: 800px;         
+  border-radius: 50%;    
+  background: url("https://img.freepik.com/free-photo/beach-background-with-beach-elements_23-2147836083.jpg?semt=ais_hybrid&w=740&q=80") no-repeat center center;
+  background-size: cover;
+  position: relative;
+  left: -250px;         
+}
+
+
+
+.login-form { 
+    flex: 1; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    padding: 2rem; 
+} 
+
+.form-box { 
+    width: 100%; 
+    max-width: 400px; 
+} 
+
+.form-box h3 { 
+    font-weight: 600; 
+} 
+
+.form-control { 
+    border-radius: 20px; 
+    background-color: #cfe2ff; 
+    border: none; 
+} 
+
+.btn-login { 
+    background-color: #0066cc; 
+    color: #fff; 
+    border-radius: 20px; 
+} 
+
+.btn-login:hover { 
+    background-color: #004c99; 
+} 
+
+.extra-links { 
+    display: flex; 
+    justify-content: space-between; 
+    font-size: 0.9rem; 
+} 
+
+.register-link { 
+    text-align: center; 
+    margin-top: 1rem; 
+}
+
+/* --- Estilos para el formulario de registro --- */
+.form-card {
+    background: #f9fbfd;
+    padding: 50px 40px;
+    border-radius: 20px;
+    box-shadow: 0px 6px 20px rgba(0,0,0,0.08);
+    max-width: 700px;
+    width: 100%;
+    margin: auto;
+}
+
+.form-row {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+
+.field-label {
+    color: #000;       
+    font-weight: 600;
+    margin-bottom: 5px;
+    font-size: 0.95rem;
+}
+
+.big-input .form-control, 
+.big-input .form-select {
+    border-radius: 20px;
+    height: 50px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    background: #fff;
+}
+
+.input-group.big-input .form-control {
+    border-radius: 20px 0 0 20px;
+}
+
+        
+.form-row {
+   display: flex;
+   gap: 15px;
+   flex-wrap: wrap;
+  }
+.form-group {
+   flex: 1;
+   min-width: 150px;
+ }
+.form-card {
+   background: #f9fbfd;
+   padding: 40px;
+   border-radius: 20px;
+   box-shadow: 0px 6px 20px rgba(0,0,0,0.08);
+ }
+ .big-input .form-control, .big-input .form-select {
+    border-radius: 20px;
+    height: 50px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    background: #fff;
+   }
+
+@media (max-width: 767px) {
+    .form-row {
+        flex-direction: column;
+    }
+    .form-group {
+        flex: 1 1 100%;
+    }
+}
+
+.chatbot-window {
+  display: none; /* Oculta por defecto */
+  flex-direction: column;
+}
+
+.chatbot-window.open {
+  display: flex;
+  opacity: 1;
+  transform: translateY(0);
+}
+/* Estado abierto del chatbot */
+.chatbot-window.open {
+  display: flex;
+}
+
+#chatbot-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #0d6efd;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  padding: 12px 18px;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  cursor: pointer;
+  z-index: 9999;
+  transition: all 0.3s ease-in-out;
+}
+
+#chatbot-btn:hover {
+  background: #0b5ed7;
+  transform: scale(1.05);
+}
+
+/* Icono del robot */
+#chatbot-btn i {
+  font-size: 22px;
+}
+
+/* Mensaje */
+#chatbot-btn span {
+  font-weight: 600;
+}
+/* Ventana del chatbot */
+.chatbot-window {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  width: 320px;
+  height: 420px;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  display: none; /* Oculta por defecto */
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 9998;
+}
+
+/* Encabezado */
+.chatbot-header {
+  background: #0d6efd;
+  color: white;
+  padding: 12px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Botón cerrar */
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  color: white;
+  cursor: pointer;
+}
+
+/* Mensajes */
+.chatbot-messages {
+  flex: 1;
+  padding: 10px;
+  overflow-y: auto;
+  font-size: 14px;
+}
+
+.bot-message {
+  background: #e9ecef;
+  padding: 8px 12px;
+  border-radius: 10px;
+  margin-bottom: 8px;
+  max-width: 80%;
+}
+
+.user-message {
+  background: #0d6efd;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 10px;
+  margin-bottom: 8px;
+  align-self: flex-end;
+  max-width: 80%;
+}
+
+/* Input */
+.chatbot-input {
+  display: flex;
+  border-top: 1px solid #ddd;
+}
+
+.chatbot-input input {
+  flex: 1;
+  border: none;
+  padding: 10px;
+  outline: none;
+}
+
+.chatbot-input button {
+  background: #0d6efd;
+  border: none;
+  color: white;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+/* Mensajes estilo WhatsApp */
+#chatbot-messages {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Mensaje del bot */
+.bot-message {
+  align-self: flex-start;
+  background: #f1f1f1;
+  padding: 10px;
+  border-radius: 12px;
+  max-width: 80%;
+  font-size: 14px;
+}
+
+/* Mensaje del usuario */
+.user-message {
+  align-self: flex-end;
+  background: #007bff;
+  color: white;
+  padding: 10px;
+  border-radius: 12px;
+  max-width: 80%;
+  font-size: 14px;
+}
+
+/* Tarjetas dentro del mensaje del bot */
+.plan-card {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 8px 12px;
+  margin-top: 8px;
+  font-size: 13px;
+  box-shadow: 0px 2px 6px rgba(0,0,0,0.1);
+}
+
+.plan-card h6 {
+  margin: 0 0 5px 0;
+  font-weight: bold;
+  color: #007bff;
+}
+
+.plan-card.total {
+  background: #e6f0ff;
+  font-weight: bold;
+}
+/* Contenedor de opciones */
+.options-container {
+  margin-top: 8px;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+/* Botones de categoría */
+.option-btn {
+  background: #0d6efd;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 20px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  margin: 5px; 
+  display: inline-block; 
+}
+
+.option-btn:hover {
+  background: #0b5ed7;
+  transform: scale(1.05);
+}
+
+.bot-message button.option-btn {
+  margin-top: 6px;
+}
+
+
+
